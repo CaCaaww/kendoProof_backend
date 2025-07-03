@@ -1,5 +1,4 @@
-Note from author:
-to run the project, you first have to run the backend API by running the TtcustAPiApplication.java file. Then you can open a new terminal and do the command: npm run dev
+
 
 
 # React + TypeScript + Vite
