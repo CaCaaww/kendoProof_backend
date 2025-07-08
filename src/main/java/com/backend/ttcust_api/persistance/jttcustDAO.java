@@ -2,6 +2,7 @@ package com.backend.ttcust_api.persistance;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+import com.backend.ttcust_api.sensitiveInfo;
 
 import com.backend.ttcust_api.model.iauData;
 import com.backend.ttcust_api.model.seqData;
@@ -11,26 +12,26 @@ import com.backend.ttcust_api.model.ttcust;
 // import com.microsoft.sqlserver.jdbc.SQLServerException;
 
 public class jttcustDAO {
-    
+    sensitiveInfo info = new sensitiveInfo();
 
-    private String jdbcURL = "jdbc:datadirect:openedge://192.168.12.35:15020;databaseName=tmm10;";
-    private String username = "sysprogress";
-    private String password;
+    
     private Connection con;
 
     public jttcustDAO() {
         try {
-            Scanner scanner = new Scanner(System.in);
+            
 
-            System.out.println("Username:");
-            username = scanner.nextLine();
-            System.out.println("Open-Sesame-Says-What?:");
-            password = scanner.nextLine();
+            // Scanner scanner = new Scanner(System.in);
 
-            scanner.close();
+            // System.out.println("Username:");
+            // username = scanner.nextLine();
+            // System.out.println("Open-Sesame-Says-What?:");
+            // password = scanner.nextLine();
+
+            // scanner.close();
 
             Class.forName ( "com.ddtek.jdbc.openedge.OpenEdgeDriver");
-            con = DriverManager.getConnection ( jdbcURL, username, password );
+            con = DriverManager.getConnection ( info.getUrl(), info.getUsername(), info.getPassword() );
             con.setTransactionIsolation(1); // no locks
             System.out.println("NO ERRORS THROWN WHEN TRYING TO CONNECT");
 
@@ -42,17 +43,15 @@ public class jttcustDAO {
         
     }
 
-    public String getPassword(){
-        return password;
-    }
+    
 
     public String loginRequest(String username){
         try{
             // jttcustDAO = new jttcustDAO();
             // password = jttcustDAO.getPassword();
 
-            Class.forName ( "com.ddtek.jdbc.openedge.OpenEdgeDriver");
-            con = DriverManager.getConnection ( jdbcURL, "sysprogress", "sysprogress" );
+            // Class.forName ( "com.ddtek.jdbc.openedge.OpenEdgeDriver");
+            // con = DriverManager.getConnection ( info.getUrl(), info.getUsername(), info.getPassword() );
             //System.out.println("NO ERRORS THROWN WHEN TRYING TO CONNECT");
 
             String query = "SELECT \"user-id\" FROM pub.usr WHERE \"user-name\" = \'" + username + "\'";

@@ -32,3 +32,5 @@ build/
 ### VS Code ###
 .vscode/
 node_modules
+
+src\main\java\com\backend\ttcust_api\sensitiveInfo.java
