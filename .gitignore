@@ -1,4 +1,6 @@
 HELP.md
+src/main/java/com/backend/ttcust_api/sensitiveInfo.java
+data/stuff.txt
 target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
@@ -33,4 +35,4 @@ build/
 .vscode/
 node_modules
 
-src\main\java\com\backend\ttcust_api\sensitiveInfo.java
+
