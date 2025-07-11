@@ -52,4 +52,8 @@ public class dataColumn {
     public String toString(){
         return "dataColumn[field: " + field + ", title: " + title + ", orderIndex: " + orderIndex + ", width: " + width + "]";
     }
+
+    public String toString2(){
+        return "{\"field\": \"" + field + "\", \"title\": \"" + title + "\", \"orderIndex\": \"" + orderIndex + "\", \"width\": \"" + width + "\"}";
+    }
 }
